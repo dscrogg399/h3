@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 const router = express.Router();
-const { getTurtleData } = require("../models/facts");
-const { getCorrectAnswers, getQuizQuestions } = require("../models/questions");
+import { getTurtleData } from "../models/facts";
+import { getCorrectAnswers, getQuizQuestions } from "../models/questions";
 
 router.get("/data", dataHandler);
 router.get("/questions", questionHandler);
@@ -25,4 +25,6 @@ function answerHandler(req: Request, res: Response) {
   });
 }
 
-module.exports = router;
+export {
+  router
+};

@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
-const { startDb } = require("./db");
+import { startDb } from "./db.js";
+import { router } from "./routes/index.js"
 
 //For env File
 dotenv.config();
@@ -10,7 +11,7 @@ const port = process.env.PORT || 8000;
 
 app.set("json spaces", 2);
 
-app.use(require("./routes"));
+app.use(router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to Express & TypeScript Server");

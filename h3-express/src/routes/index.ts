@@ -1,6 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
 router.use("/api", require("./api.v0.ts"));
 
-module.exports = router;
+export {
+    router
+}

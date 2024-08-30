@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const { correctAnswers, quizQuestions } = require("../data");
+import { correctAnswers, quizQuestions } from "../data";
 
 const QuestionSchema = new mongoose.Schema({
   question_type: String,
@@ -15,7 +15,7 @@ const QuestionSchema = new mongoose.Schema({
 
 const Question = mongoose.model("Question", QuestionSchema);
 
-module.exports = {
+export {
   Question,
   getCorrectAnswers,
   getQuizQuestions,

@@ -1,4 +1,4 @@
-const { turtlesData } = require("../data");
+import { turtlesData } from "../data";
 import mongoose from "mongoose";
 
 const FactSchema = new mongoose.Schema({
@@ -11,7 +11,7 @@ const FactSchema = new mongoose.Schema({
 
 const Fact = mongoose.model("Fact", FactSchema);
 
-module.exports = {
+export {
   Fact,
   getTurtleData,
 };
